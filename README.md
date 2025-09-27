@@ -18,7 +18,7 @@ pkg install git -y
 ```
 3. Clone this repo
 ```
-git clone https://github.com/purplemashu/me-cli
+git clone https://github.com/horxy01/duar
 ```
 4. Open the folder
 ```

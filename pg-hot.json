@@ -71,4 +71,12 @@
         "option_name": "BIZ Lite test",
         "order": 1
     }
+    {
+        "family_name": "45GB Setahun",
+        "family_code": "f3303d95-8454-4e80-bb25-38513d358a11",
+        "is_enterprise": true,
+        "variant_name": "45GB Setahun",
+        "option_name": "mastif 1 th",
+        "order": 1
+    }
 ]

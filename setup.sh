@@ -19,9 +19,24 @@ echo -e "${BLUE}============================================${NC}"
 echo -e "${GREEN}🚀 Memulai Setup Lingkungan Python...${NC}"
 echo -e "${BLUE}============================================${NC}"
 
+# 🔍 Deteksi apakah ini Termux
+if [ -n "$PREFIX" ] && [ -d "$PREFIX/etc/apt" ]; then
+    echo -e "${YELLOW}📡 Memeriksa repo Termux...${NC}"
+    if ! grep -q "packages.termux.dev" "$PREFIX/etc/apt/sources.list" 2>/dev/null; then
+        echo -e "${YELLOW}⚠️  Repo lama terdeteksi. Mengganti ke mirror resmi...${NC}"
+        rm -rf $PREFIX/etc/apt/sources.list.d/*
+        echo "deb https://packages.termux.dev/apt/termux-main stable main" > $PREFIX/etc/apt/sources.list
+    fi
+fi
+
 # 1️⃣ Update daftar paket
 echo -e "${GREEN}📦 Memperbarui daftar paket...${NC}"
-pkg update -y || { echo -e "${RED}❌ Gagal update paket.${NC}"; exit 1; }
+if ! pkg update -y; then
+    echo -e "${RED}❌ Gagal update paket. Mencoba perbaiki mirror...${NC}"
+    rm -rf $PREFIX/etc/apt/sources.list.d/*
+    echo "deb https://packages.termux.dev/apt/termux-main stable main" > $PREFIX/etc/apt/sources.list
+    pkg update -y || { echo -e "${RED}❌ Masih gagal update. Cek koneksi internet Anda.${NC}"; exit 1; }
+fi
 
 # 2️⃣ Instal Python
 echo -e "${GREEN}🐍 Menginstal Python...${NC}"

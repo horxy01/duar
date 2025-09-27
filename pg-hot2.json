@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Masa Aktif 1 bulan",
+        "price": "Rp1000",
+        "detail": "Tested metode E-Wallet & QRIS.\nSaldo akan di-refund setelah 10-30 menit.\nPastikan metode scan QRIS support refund.\nTidak bisa akumulasi. Pastikan masa aktif saat ini kurang dari 1 bulan.",
+        "packages": [
+            {
+                "family_name": "Akrab",
+                "family_code": "f4fd69c7-12a4-4047-a1f2-f4072a7c543e",
+                "is_enterprise": false,
+                "variant_name": "Akrab",
+                "variant_code": "555a091d-b1eb-43c2-925f-3da485fecf5f",
+                "option_name": "19GB for 2 Members",
+                "order": 8
+            },
+            {
+                "family_name": "Work & School",
+                "family_code": "5d63dddd-4f90-4f4c-8438-2f005c20151f",
+                "is_enterprise": false,
+                "variant_name": "Work & School",
+                "variant_code": "5b59c55b-0dc7-4f34-a6e9-6afa233ad53b",
+                "option_name": "Education 2GB",
+                "order": 6
+            }
+        ]
+    }
+]
